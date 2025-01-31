@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/Homepage.css";
 
-export default function Homepage({ reactData }) {
+export default function Homepage() {
   return (
     <section className="homepage">
       <div className="container">

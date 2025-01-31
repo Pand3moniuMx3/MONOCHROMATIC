@@ -1,18 +1,20 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import reactData from "../data/react.json";
 import Homepage from "./Homepage";
 import Page from "./Page";
 import Category from "./Category";
 import Layout from "./Layout";
 import "../styles/App.css";
+import { useGuide } from "../context/GuideContext";
 
 export default function App() {
+  const { data } = useGuide();
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout reactData={reactData} />}>
-          <Route index element={<Homepage reactData={reactData} />} />
-          {reactData.map((category) => (
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Homepage />} />
+          {data.map((category) => (
             <Route
               key={category.id}
               path={`${category.path}`}

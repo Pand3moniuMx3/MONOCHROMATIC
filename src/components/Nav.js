@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 import "../styles/Nav.css";
+import { useGuide } from "../context/GuideContext";
 
-export default function Nav({ isNavOpen, reactData, setIsNavOpen }) {
+export default function Nav({ isNavOpen, setIsNavOpen }) {
+  const { data } = useGuide();
+
   function handleCloseNav() {
     setIsNavOpen(false);
   }
 
   return (
     <aside className={`nav ${isNavOpen && "open"}`}>
-      {reactData.map((category) => (
+      {data.map((category) => (
         <NavItem
           key={category.id}
           category={category}
