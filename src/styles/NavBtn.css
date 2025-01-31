@@ -1,0 +1,15 @@
+.nav-btn {
+  display: none;
+  position: absolute;
+  top: var(--global-gap);
+  left: var(--global-gap);
+  cursor: pointer;
+  background: transparent;
+  z-index: 2;
+}
+
+@media screen and (max-width: 800px) {
+  .nav-btn {
+    display: flex;
+  }
+}

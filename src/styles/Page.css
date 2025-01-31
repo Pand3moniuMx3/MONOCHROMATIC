@@ -1,0 +1,113 @@
+:root {
+  --inner-content-width: 825px;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  gap: var(--global-gap);
+}
+.page::-webkit-scrollbar {
+  width: 3px;
+}
+.page .container {
+  width: min(var(--content-width), 100%);
+  min-height: min-content;
+  display: flex;
+  flex-direction: column;
+  gap: var(--global-gap);
+  padding: calc(2 * var(--global-padding));
+}
+
+/* DEFINITION */
+
+.page .definition {
+  width: min(var(--inner-content-width), 100%);
+}
+
+/* LINK */
+
+.page .docs-link {
+  display: flex;
+  gap: 12px;
+  padding: 3px 12px;
+  border: 1px solid var(--clr-grey);
+  border-radius: var(--border-radius);
+  white-space: nowrap;
+  width: min-content;
+  transition: var(--transition);
+}
+.page .docs-link p {
+  transition: var(--transition);
+}
+.page .docs-link img {
+  width: 14px;
+  transition: var(--transition);
+}
+.page .docs-link:hover {
+  background: var(--clr-dark-grey);
+  gap: 20px;
+}
+.page .docs-link:hover p {
+  color: var(--clr-white);
+}
+.page .docs-link:hover img {
+  transform: rotate(45deg);
+}
+
+/* SUB */
+
+.page .sub {
+  display: flex;
+  flex-direction: column;
+  gap: var(--inner-gap);
+  width: min(var(--inner-content-width), 100%);
+}
+
+/* PARAMETERS */
+
+.page .sub .item .thingy {
+  padding: 2px 10px;
+  background: var(--clr-white);
+  border-radius: var(--border-radius);
+  margin-right: 10px;
+  font-family: "Courier New", Courier, monospace;
+  user-select: none;
+  letter-spacing: -1px;
+  font-size: 16px;
+  color: var(--clr-black);
+}
+
+/* EXAMPLES */
+
+.page .sub .example {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--global-gap);
+  padding-bottom: var(--global-gap);
+}
+.page .sub .example .img-wrapper {
+  border: 1px solid var(--clr-dark-grey);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  display: flex;
+}
+.page .sub .example .img-wrapper img {
+  width: 100%;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 800px) {
+  .page {
+    padding-top: var(--global-gap);
+  }
+  .page .container {
+    padding: 50px var(--global-padding);
+  }
+}
