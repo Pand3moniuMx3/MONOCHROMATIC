@@ -39,7 +39,10 @@ export default function Page({ data }) {
               <div className="example">
                 <p>{example.explanation}</p>
                 <div className="img-wrapper">
-                  <img src={example.image} alt={`example of ${data.title}`} />
+                  <img
+                    src={`https://raw.githubusercontent.com/Pand3moniuMx3/MONOCHROMATIC_API/main${example.image}`}
+                    alt={`example of ${data.title}`}
+                  />
                 </div>
               </div>
             ))}
