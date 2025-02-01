@@ -37,6 +37,7 @@
   padding: 3px 12px;
   border: 1px solid var(--clr-grey);
   border-radius: var(--border-radius);
+  background: var(--clr-black);
   white-space: nowrap;
   width: min-content;
   transition: var(--transition);
@@ -92,13 +93,12 @@
   padding-bottom: var(--global-gap);
 }
 .page .sub .example .img-wrapper {
-  border: 1px solid var(--clr-dark-grey);
   border-radius: var(--border-radius);
   overflow: hidden;
   display: flex;
 }
 .page .sub .example .img-wrapper img {
-  width: 100%;
+  max-width: 100%;
 }
 
 /* MEDIA QUERIES */
@@ -108,6 +108,6 @@
     padding-top: var(--global-gap);
   }
   .page .container {
-    padding: 50px var(--global-padding);
+    padding: 70px var(--global-padding);
   }
 }

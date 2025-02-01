@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/Nav.css";
 import { useGuide } from "../context/GuideContext";
+import { useState } from "react";
 
 export default function Nav({ isNavOpen, setIsNavOpen }) {
   const { data } = useGuide();
@@ -9,15 +10,44 @@ export default function Nav({ isNavOpen, setIsNavOpen }) {
     setIsNavOpen(false);
   }
 
+  // search bar
+  const [query, setQuery] = useState("");
+  const filteredData = [...data]
+    .map((category) => ({
+      ...category,
+      items: category.items.filter((item) =>
+        item.title.toLowerCase().includes(query.toLowerCase())
+      ),
+    }))
+    .filter((category) => category.items.length > 0);
+
   return (
     <aside className={`nav ${isNavOpen && "open"}`}>
-      {data.map((category) => (
+      <div className="nav-item">
+        <div className="search-bar">
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search..."
+          />
+          <img
+            src="/icons/search-icon.svg"
+            alt="search"
+            className="search-icon"
+          />
+        </div>
+      </div>
+      {filteredData.map((category) => (
         <NavItem
           key={category.id}
           category={category}
           handleCloseNav={handleCloseNav}
         />
       ))}
+      {filteredData === 0 && (
+        <p style={{ color: "var(--clr-grey)" }}>No items matched</p>
+      )}
     </aside>
   );
 }

@@ -25,7 +25,11 @@ export default function App() {
                 element={<Navigate to={`${category.items[0].path}`} />}
               />
               {category.items.map((item) => (
-                <Route path={`${item.path}`} element={<Page data={item} />} />
+                <Route
+                  key={item.path}
+                  path={`${item.path}`}
+                  element={<Page data={item} />}
+                />
               ))}
             </Route>
           ))}

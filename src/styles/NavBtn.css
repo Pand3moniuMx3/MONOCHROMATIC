@@ -1,15 +1,23 @@
-.nav-btn {
+.nav-btn-container {
   display: none;
+  justify-content: space-between;
   position: absolute;
-  top: var(--global-gap);
-  left: var(--global-gap);
-  cursor: pointer;
-  background: transparent;
+  top: 0;
+  left: 0;
+  right: 3px;
+  padding: var(--global-padding);
+  background: var(--clr-black);
+  border-bottom: 1px solid var(--clr-dark-grey);
+  backdrop-filter: blur(30px);
   z-index: 2;
 }
 
+.nav-btn-container img {
+  mix-blend-mode: difference;
+}
+
 @media screen and (max-width: 800px) {
-  .nav-btn {
+  .nav-btn-container {
     display: flex;
   }
 }

@@ -13,7 +13,7 @@ function reducer(state, action) {
     case "data/loading":
       return {
         ...state,
-        status: action.payload,
+        status: "loading",
       };
     case "data/error":
       return {
@@ -37,16 +37,15 @@ function GuideProvider({ children }) {
   useEffect(function () {
     async function getGuideData() {
       try {
-        dispatch({ type: "data/loading", payload: "loading" });
+        dispatch({ type: "data/loading" });
         const res = await fetch(
           "https://pand3moniumx3.github.io/MONOCHROMATIC_API/react.json"
         );
         const data = await res.json();
+        console.log(data);
         dispatch({ type: "data/fetched", payload: data });
       } catch {
         dispatch({ type: "data/error" });
-      } finally {
-        dispatch({ type: "data/loading", payload: "ready" });
       }
     }
     getGuideData();

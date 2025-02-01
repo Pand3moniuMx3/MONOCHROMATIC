@@ -1,0 +1,18 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Mid Light Mode Icon" clip-path="url(#clip0_358_2)">
+<circle id="Sun" cx="8" cy="8" r="2.5" stroke="#f2f3f4"/>
+<path id="RayNW" d="M4.81798 4.81802L2.69666 2.6967" stroke="#f2f3f4" stroke-linecap="round"/>
+<path id="SayW" d="M3.5 8H0.5" stroke="#f2f3f4" stroke-linecap="round"/>
+<path id="RaySW" d="M4.81799 11.182L2.69667 13.3033" stroke="##f2f3f4" stroke-linecap="round"/>
+<path id="RayS" d="M8 12.5V15.5" stroke="#f2f3f4" stroke-linecap="round"/>
+<path id="RaySE" d="M11.182 11.182L13.3033 13.3033" stroke="#f2f3f4" stroke-linecap="round"/>
+<path id="RayE" d="M12.5 8H15.5" stroke="#f2f3f4" stroke-linecap="round"/>
+<path id="RayNE" d="M11.182 4.81802L13.3033 2.6967" stroke="#f2f3f4" stroke-linecap="round"/>
+<path id="RayN" d="M8 3.5V0.5" stroke="#f2f3f4" stroke-linecap="round"/>
+</g>
+<defs>
+<clipPath id="clip0_358_2">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

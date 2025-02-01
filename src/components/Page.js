@@ -36,11 +36,11 @@ export default function Page({ data }) {
           <div className="sub">
             <b>Examples:</b>
             {data.examples.map((example) => (
-              <div className="example">
+              <div className="example" key={example.image}>
                 <p>{example.explanation}</p>
                 <div className="img-wrapper">
                   <img
-                    src={`https://raw.githubusercontent.com/Pand3moniuMx3/MONOCHROMATIC_API/main${example.image}`}
+                    src={`https://raw.githubusercontent.com/Pand3moniuMx3/MONOCHROMATIC_API/main/images${example.image}`}
                     alt={`example of ${data.title}`}
                   />
                 </div>
