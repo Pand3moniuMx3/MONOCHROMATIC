@@ -1,16 +1,19 @@
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Homepage from "./Homepage";
-import Page from "./Page";
-import Category from "./Category";
-import Layout from "./Layout";
-import "../styles/App.css";
 import { useGuide } from "../context/GuideContext";
+import Loader from "./Loader";
+import "../styles/App.css";
+const Homepage = lazy(() => import("./Homepage"));
+const Layout = lazy(() => import("./Layout"));
+const Category = lazy(() => import("./Category"));
+const Page = lazy(() => import("./Page"));
 
 export default function App() {
   const { data } = useGuide();
 
   return (
     <BrowserRouter>
+      <Suspense fallback={<Loader />} />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Homepage />} />

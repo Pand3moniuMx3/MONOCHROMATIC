@@ -34,7 +34,7 @@ export default function Page({ data }) {
         )}
         {data.examples.length >= 1 && (
           <div className="sub">
-            <b>Examples:</b>
+            <b>Usage:</b>
             {data.examples.map((example) => (
               <div className="example" key={example.image}>
                 <p>{example.explanation}</p>

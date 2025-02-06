@@ -86,7 +86,6 @@
 /* EXAMPLES */
 
 .page .sub .example {
-  width: 100%;
   display: flex;
   flex-direction: column;
   gap: var(--global-gap);
@@ -99,6 +98,7 @@
 }
 .page .sub .example .img-wrapper img {
   max-width: 100%;
+  border-radius: var(--border-radius);
 }
 
 /* MEDIA QUERIES */
